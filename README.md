@@ -3,10 +3,7 @@ owfs.php
 
 Simple OWFS wrapper to access [OWFS file system](http://owfs.org/)
 
-Classes
-========
-
-OWFS
+Class OWFS\OWFS
 --------
 
 OWFS is the main class to access the one wire file system.
@@ -35,24 +32,27 @@ $sensor = $owfs->getByAddress('284D38C203000041');
 
 If more than one sensor matches (mostly by <code>getByType()</code>) an array of all matching sensors will be returned and FALSE for no match.
 
-Sensor
+Class OWFS\Sensor
 --------
 
-This the class to access the sensor properties, read and write.
+This is the class to access the sensor properties, read and write.
 
-You can access them with
+You can read them with
 
 ```php
-$temperature = $sensor->get('temperature');
-$temperature = $sensor->temperature;
+$temperature = $sensor->get('Temperature');
+$temperature = $sensor->Temperature;
 ```
 
 To get the uncached value, use
 
 ```php
-$temperature = $sensor->get('temperature', TRUE);
-$temperature = $sensor->temperature_uncached;
+$temperature = $sensor->get('Temperature', TRUE);
+$temperature = $sensor->getUncached('Temperature');
+$temperature = $sensor->Temperature_uncached;
 ```
+
+Once readed property values (NOT uncached ones) are internaly cached, so file system is only queried once for each script run.
 
 Get an array with all properties
 
@@ -91,7 +91,16 @@ Array
 
 <code>path</code> and <code>description</code> are not native owfs properties.
 
-Family
+To write values, use
+
+```php
+$sensor->set('TempLow', -50);
+$sensor->TempLow = -50;
+```
+
+Proterty names will handled case insensitive, in the file system all properties lowercase.
+
+Class OWFS\Family
 --------
 
 This class translates the <code>family</code> code into the [description](http://owfs.org/index.php?page=family-code-list).

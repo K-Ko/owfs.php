@@ -27,6 +27,18 @@ class Sensor {
   }
 
   /**
+   * Get an uncached value for a sensor key
+   *
+   * Simple wrapper for get($key, TRUE)
+   *
+   * @param $key string
+   * @return string
+   */
+  public function getUncached( $key ) {
+    return $this->get($key, TRUE);
+  }
+
+  /**
    * Get a value for a sensor key
    *
    * @param $key string
