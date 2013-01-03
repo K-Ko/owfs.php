@@ -8,7 +8,7 @@ Class OWFS\OWFS
 
 OWFS is the main class to access the one wire file system.
 
-It requires the owfs root path as paramter on creation.
+It requires the owfs root path as parameter on creation.
 
 Create an instance like this
 
@@ -98,7 +98,7 @@ $sensor->set('TempLow', -50);
 $sensor->TempLow = -50;
 ```
 
-Proterty names will handled case insensitive, in the file system all properties lowercase.
+Property names are case insensitive, in the file system all properties lowercase.
 
 Class OWFS\Family
 --------
