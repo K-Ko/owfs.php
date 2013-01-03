@@ -19,6 +19,14 @@ Create an instance like this
 $owfs = new OWFS\OWFS('/owfs');
 ```
 
+To loop all detected sensors use
+
+```php
+foreach ($owfs->getAll() as $sensor) {
+  ...
+}
+```
+
 To find a sensor by its property, just use the <code>getBy<property>()</code> functions.
 
 ```php
