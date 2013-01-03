@@ -1,7 +1,7 @@
 owfs.php
 ========
 
-Simple OWFS wrapper to access OWFS file system
+Simple OWFS wrapper to access [OWFS file system](http://owfs.org/)
 
 Classes
 ========
@@ -94,6 +94,6 @@ Array
 Family
 --------
 
-This class translates the <code>family</code> property into the description.
+This class translates the <code>family</code> code into the [description](http://owfs.org/index.php?page=family-code-list).
 
 This class is used internally by accessing <code>$sensor->Description</code>
